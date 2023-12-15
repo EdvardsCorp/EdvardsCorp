@@ -49,27 +49,26 @@ const data = [
   "CZItvlfdqW",
 ];
 
-var vastus = 0;
-var vastussõnad = [];
 
-otsi = prompt("sisesta otsingu parameeter (täht või number)"); //prompt("sisesta täht või number");
-täht = otsi; // näide täht = "t"
+var täht = "a";
 
-//  data.lenght = kõik sõnad mis seal = 50 sõna
-// kuna i = 0 siis 0 < 10 siis i++ (0+1)
-// ja siis i = 1 siis 1 < 10 siis i++ JNE.
-// ja kuna data [i = 0], data[FWmcfgAWxe]["F""W"] === <- see equal value and equal type täht näiteks(promnt "F") see on true ja funkt läheb edasi
+function countCode(täht) {
+  var vastus = 0;
+  var vastussõnad = [];
 
-// if (data[FWmcfgAWxe]["F""W"] === "f" <- ei lähe edasi kuna esimene täht suur F siis läheb vaatab edasi nimekirjas kuni tuleb algustähega "f"
-//funkt läheb edasi ja vastus ++ ehk vastus + 1 ehk 1 sõna on olemas millel on algustäht f
+  for (var i = 0; i < data.length; i++) {
+      if (data[i][0] === täht) {
+          vastus++;
+          vastussõnad.push(data[i]);
+      }
+  }
 
-for (var i = 0; i < data.length; i++) {
-    if (data[i][0] === täht) {
-      // if data [ i = 0 siis 0 datas on "FWmcfgAWxe"  ] ja järgmine [ 0 <- esimene täht "F"]
-        vastus++;
-        vastussõnad.push(data[i])
-    }
+  return {
+      vastus: vastus,
+      vastussõnad: vastussõnad
+  };
 }
 
-return("selle tähega on leitud " + vastus + " vastavat koodi, need koodid on : " + vastussõnad);
-
+var result = countCode("a");
+console.log(result.vastussõnad);
+console.log("Selle tähega on leitud " + result.vastus + " vastavat koodi, need koodid on : " + result.vastussõnad);
