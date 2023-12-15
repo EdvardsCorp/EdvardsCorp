@@ -61,10 +61,7 @@ function countCode(täht) {
       }
   }
 
-  return {
-      vastus: vastus,
-      vastussõnad: vastussõnad
-  };
+  return vastus
 }
 
 var result = countCode("a");
