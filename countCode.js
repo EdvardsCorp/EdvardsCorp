@@ -71,5 +71,5 @@ for (var i = 0; i < data.length; i++) {
     }
 }
 
-console.log("selle tähega on leitud " + vastus + " vastavat koodi, need koodid on : " + vastussõnad);
+return("selle tähega on leitud " + vastus + " vastavat koodi, need koodid on : " + vastussõnad);
 
