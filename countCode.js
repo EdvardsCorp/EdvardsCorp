@@ -50,8 +50,6 @@ const data = [
 ];
 
 
-var täht = "a";
-
 function countCode(täht) {
   var vastus = 0;
   var vastussõnad = [];
